@@ -55,7 +55,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
        clientId: 'QqpDKaGbeJLgWn7P7DTSQk6buF2W290A',
        audience: "https://city-search-api.example.com",
        httpInterceptor: {
-        allowedList: [`http://localhost:9050/api/v1/cities/*`],
+        allowedList: [`http://localhost:9050/api/v1/cities/*`,`https://city-search-api-springboot.herokuapp.com/api/v1/cities/*`],
        }
     })
   ],
