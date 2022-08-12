@@ -14,6 +14,8 @@ import org.springframework.core.io.Resource;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,14 +23,12 @@ public class ResourceStaticUtils {
     private static final Logger logger = LoggerFactory.getLogger(ImportCitiesCommandLineRunner.class);
 
     public static List<City> getCities(String resourceName) throws IOException {
-        Resource resource = new ClassPathResource("static/" + resourceName);
+        Resource  resource = new ClassPathResource("static/" + resourceName);
         List<City> results = new ArrayList<City>();
 
         CsvToBean csv = new CsvToBean();
-
-        String csvFilename = resource.getFile().getAbsolutePath();
-        logger.info("fileName {}", csvFilename);
-        CSVReader csvReader = new CSVReaderBuilder(new FileReader(csvFilename)).withSkipLines(1).build();
+        InputStream stream= resource.getInputStream();
+        CSVReader csvReader = new CSVReaderBuilder(new InputStreamReader(stream)).withSkipLines(1).build();
 
         //Set column mapping strategy
         List list = csv.parse(setColumMapping(), csvReader);
