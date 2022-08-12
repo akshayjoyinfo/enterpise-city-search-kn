@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Edit City- {{editCityData.name}}</h1>
+<div mat-dialog-content>
+    <mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+  <p>CityName</p>
+  <mat-form-field appearance="fill" >
+    <mat-label>City Name</mat-label>
+    <input matInput [(ngModel)]="editCityData.name" value="{{editCityData.name}}">
+  </mat-form-field>
+  <p>City Url</p>
+  <mat-form-field appearance="fill">
+    <mat-label>City Url</mat-label>
+    <textarea matInput  [(ngModel)]="editCityData.photo">{{editCityData.photo}}</textarea>
+  </mat-form-field>
+
+  <mat-card class="example-card">   
+    <img mat-card-image src="{{editCityData.photo}}" alt="Photo of a {{editCityData.photo}}">
+  </mat-card>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="closeDialog()">Close</button>
+  <button mat-button (click)="saveCityDialog()" cdkFocusInitial>Save</button>
+</div>

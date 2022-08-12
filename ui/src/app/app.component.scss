@@ -1,0 +1,33 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+table {
+    width: 100%;
+  }
+
+.header-photo-cell {
+    width: 20%;
+}
+
+
+.header-name-cell{
+    width: 60%;
+}
+
+.header-actions-cell{
+    width: 40%;
+    padding-top: 5%;
+}
+
+th.mat-header-cell{
+    font-weight: bold;
+    font-size: 15px;
+    color: #673ab7;
+}
+
+
+.city-photo{
+    width: 100px; 
+    height:100px;
+}
