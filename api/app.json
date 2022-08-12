@@ -1,0 +1,8 @@
+{
+  "name": "heroku-springboot-city-api",
+  "buildpacks": [
+    {
+      "url": "heroku/gradle"
+    }
+  ]
+}
