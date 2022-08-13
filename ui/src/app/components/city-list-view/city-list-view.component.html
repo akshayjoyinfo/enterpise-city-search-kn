@@ -1,12 +1,14 @@
 <mat-toolbar color="primary">
-  <span>Kuhene + Nagel City Search</span>
-  <span class="example-spacer"></span>
-  <mat-form-field style="width: 600px">
+  <h3>Kuhene + Nagel City Search</h3>
+  
+
+  
+  <div class="search-group">
+      <mat-form-field>
     <mat-icon matPrefix>search</mat-icon>
     <input matInput type="search" placeholder="Search Cities" class="search-input" (keyup)="filterCities($event)">
   </mat-form-field>
-  <span class="example-spacer"></span>
-  <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+   <div class="logout-btn">
     <button mat-button (click)="loginWithRedirect()" *ngIf="(auth.isAuthenticated$ | async) === false">
       <mat-icon>power_settings_new</mat-icon>
       Login
@@ -15,6 +17,7 @@
       <mat-icon>exit_to_app</mat-icon>
       Logout
     </button>
+   </div>
   </div>
 </mat-toolbar>
 
