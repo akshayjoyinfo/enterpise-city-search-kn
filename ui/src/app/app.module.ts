@@ -25,7 +25,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CityListViewComponent } from './components/city-list-view/city-list-view.component';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-
+import { environment as env } from '../environments/environment';
 
 @NgModule({
   imports: [
@@ -50,13 +50,19 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
     MatDialogModule,
     MatSnackBarModule,
     HttpClientModule,
+    // AuthModule.forRoot({
+    //    domain: 'dev-krypton-city-search.us.auth0.com',
+    //    clientId: 'QqpDKaGbeJLgWn7P7DTSQk6buF2W290A',
+    //    audience: "https://city-search-api.example.com",
+    //    httpInterceptor: {
+    //     allowedList: [`http://localhost:9050/api/v1/cities/*`,`https://city-search-api-springboot.herokuapp.com/api/v1/cities/*`],
+    //    }
+    // })
     AuthModule.forRoot({
-       domain: 'dev-krypton-city-search.us.auth0.com',
-       clientId: 'QqpDKaGbeJLgWn7P7DTSQk6buF2W290A',
-       audience: "https://city-search-api.example.com",
-       httpInterceptor: {
-        allowedList: [`http://localhost:9050/api/v1/cities/*`,`https://city-search-api-springboot.herokuapp.com/api/v1/cities/*`],
-       }
+      ...env.auth,
+      httpInterceptor: {
+        ...env.httpInterceptor,
+      },
     })
   ],
   providers: [ CityApiService,
@@ -68,4 +74,8 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
     CUSTOM_ELEMENTS_SCHEMA
   ]
 })
-export class AppModule { }
+export class AppModule { 
+  ngOnInit() {
+    console.log(env);
+  }
+}

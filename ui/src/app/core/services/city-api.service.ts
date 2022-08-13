@@ -5,12 +5,15 @@ import { City } from '../models/city.model';
 import { Constants } from '../../../config/constatnts';
 import { retry, catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
+import { environment as env } from '../../../environments/environment';
 
 @Injectable()
 export class CityApiService {
   
-
-  constructor(private http: HttpClient) {}
+  private API_HOST:string='';
+  constructor(private http: HttpClient) {
+    this.API_HOST = env.apiUrl;
+  }
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -24,7 +27,7 @@ export class CityApiService {
     
     let CITIES_URL =`/cities?query=${query}&page=${page}&size=${size}`;
     return this.http
-    .get<ApiPaginatedModel<City[]>>(Constants.API_HOST+CITIES_URL)
+    .get<ApiPaginatedModel<City[]>>(this.API_HOST+CITIES_URL)
     .pipe(retry(2), catchError(this.handleError));
   }
 
@@ -34,8 +37,8 @@ export class CityApiService {
 
   public updateCity(data: City) {
     let CITIES_URL =`/cities/${data._id}`;
-    console.log(Constants.API_HOST+CITIES_URL);
-    return this.http.put(Constants.API_HOST+CITIES_URL, data)
+    console.log(this.API_HOST+CITIES_URL);
+    return this.http.put(this.API_HOST+CITIES_URL, data)
     .pipe(retry(2), catchError(this.handleError));
   }
 
