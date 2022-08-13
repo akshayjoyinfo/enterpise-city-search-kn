@@ -40,6 +40,8 @@ export class EditCityDialogComponent implements OnInit {
         console.log(error);
         this._snackBar.open('Updated City - No Permission for EDIT', 'FAILED',{
           duration: 3000,
+          verticalPosition: 'top',
+          horizontalPosition: 'center',
         });
       });
 
