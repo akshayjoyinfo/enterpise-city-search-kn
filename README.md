@@ -15,6 +15,12 @@ City Updated API- works with Logged In Users with Role: ROW_LEVEL_EDIT
 ### 3. Live Demo
 API & UI Deployed to Heroku API(postgres+api) & UI(angular)
 
+
+There are multiple types of users who can access the application
+1. Anonymous Users/ Public Users - users can search citites with image , but no EDIT button, Dialog will not be available
+2. Logged  In Users - Google / UserName/Password - User can login and search cities with image, Edit button will be enabled, but user can not modify cities details
+3. Logged In Users with ROW_LEVEL_EDIT role - user can search / modify cities
+
 API: https://city-search-api-springboot.herokuapp.com/swagger
 
 UI: https://city-search-ui-angular.herokuapp.com/
