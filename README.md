@@ -35,6 +35,12 @@ UI: https://city-search-ui-angular.herokuapp.com/
 please check the connection string in application.properties
 make sure update  **DATABASE_URL** and database should be created in Local PG Server
 
+  >spring.datasource.url=jdbc:postgresql://localhost:5432/kryptontest?reWriteBatchedInserts=true
+  
+  >spring.datasource.username= <usrname>
+  
+  >spring.datasource.password=<Pasword>
+
 >jdbc:postgresql://localhost:5432/krypton?reWriteBatchedInserts=true```
 
 
@@ -59,6 +65,12 @@ curl -X 'GET' \
 
 for Testing 
 update the application.properties in test pacakge
+
+  >spring.datasource.url=jdbc:postgresql://localhost:5432/kryptontest?reWriteBatchedInserts=true
+  
+  >spring.datasource.username= <usrname>
+  >spring.datasource.password=<Pasword>
+
 
 >jdbc:postgresql://localhost:5432/kryptontest?reWriteBatchedInserts=true```
 
