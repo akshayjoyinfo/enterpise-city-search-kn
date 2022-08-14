@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1100px" preserveAspectRatio="none" style="width:1549px;height:1100px;background:#FFFFFF;" version="1.1" viewBox="0 0 1549 1100" width="1549px" zoomAndPan="magnify"><defs/><g><rect height="27.6094" style="stroke:#00000000;stroke-width:1.0;fill:none;" width="368" x="583.5" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="358" x="588.5" y="24.5332">System Context diagram for City Search Application</text><!--MD5=[84dda40acb3410cad7262261daba2aaf]
+cluster c1--><g id="cluster_c1"><rect height="413" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;fill:none;stroke-dasharray:7.0,7.0;" width="1536" x="7" y="519.6094"/><text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="206" x="672" y="538.2188">Kuehne+Nagel-City Search</text><text fill="#444444" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="51" x="749.5" y="554.1914">[System]</text></g><!--MD5=[1145e9858b847a08384525b280c2a345]
+entity city_search_system_api--><g id="elem_city_search_system_api"><rect fill="#438DD5" height="103.2188" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="87" x="651.5" y="813.6094"/><image height="48" width="48" x="671" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAACsklEQVR4Xu2XT0ocQRTGvVsfYC7gAbyAB8gB4sqVuMvCRZbusgruAm5ciBgICCIIgiEJRASh86M/eBT9OlWvq0oUdPgW3W96pn7z1ftTszV8PH9V2vKhl9U7UElvAGizf7F9+N3Hg+oPhI6+3flgUP2BcOj06o+PB9Uf6MPx9dfLXz4eVH+gy9u/Bye3Ph5UZ6C9LzfjOLJr/q2gegKxWdC02DN0BJI3Leks9QE6Pruf0bBrIOKZfzivViAWJouhscoiQh8iWNcem4BY8ubnIzQ4pAiW/H54stsK1QPhhGisL3PxkklNxqR5oxJraYlSJRD2jNPLEkWZtPPph394lZqA2DKLiG/385V/eJUqgRA05K/dcp3uYLXqgZQ0tmXKaF60H/9wXPVAiBRO249MSm2rUBPQMNWa5Q0X7ZnUCjRMPtl4Vy+o69FSB6Bh8kYXwC22aYiDZ5J1QBqZ9OLFfqMp5uPg8ikaFf4VsaJA1BRfR6kvokizxTbu7wcfB8t/MFUIyMYWFcSm4BDS6QLJM7xB7BfcMsMPNbWGvEkhIIkvkvm2tqRblgcO/zIZDWWxKawAMuV/4v+kplA8sq0GYjsWM9eEQ6w984kI3hRphjogdT9lKLsgca1OrZedGFV6KOjraqBh8kCZpNFhIkJ81qYzVbmoGqBnVQ0QlZWOi1RKoMW3gqoBsjQap85EMulsZMGx4RASBSIVqBGrHWzAJyWyoXCrtplpRUUVgDBfzTdSsXlpN318phwQX6GfTvm0/Gjc1Wzxb3nlgNRCNMXGqfFgFYZpkNkss4lmQ01Zzw5qE4krzXVY8AulygGl4ruURrakVkVQ6kJzzYaa1Zr6lp4pFmAUSBKTJgPaTMcuExEeMO7Z5A9u+jogSempVSUNBxv72s3UpLhqgJ5V70AlvTqgf2H6uTXfTevfAAAAAElFTkSuQmCC" y="823.6094"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="26" x="682" y="888.2188">API</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="67" x="661.5" y="904.1914">[Springboot]</text></g><!--MD5=[ffebe3a3829bf616d6da9b5f2638fd5e]
+entity city_search_system_ui--><g id="elem_city_search_system_ui"><rect fill="#438DD5" height="103.2188" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="72" x="659" y="573.6094"/><image height="48" width="48" x="671" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAACnUlEQVR4Xu1XTWpWQRDM3eYAXiAH8AIewAPoypW4c+HCZXauxJ3gxoVIBCEggUBAUSEhIDyLr6HpdE/VzHvfB7r4ilqE9+b11Nc/NZOT9uTTf8WT+ujf8ihoxKOgEQ8g6MGzz0/fXD4++1ZfbeBegh69vnh7/nMJ+HDxe09lWwQ9fPn17OP3qKNis7IVgkzHr9s/efNl6T5cds/xCRJZozGOBZ2++PLq/fXlj7u8W8Dzd1epdglQhgUzyqgga9Xzq5scuwcshu78tAfLGZJdd1SC0AE5Egfyt+ErpLzuSwXpAiUgN/YVfnd+x7FO0PxvRWfEDydLvOzGsO7bmKDhVDtSN6Bt8woCbFH3bUwQpiYH6AH5qN9Olhtb1G8bEwRPywF68DHGH54qzGZe1wOzzb6gmfaMXYmGiM3EfDKCTX5fEHwlByhAJmyxO5CP20zFsUXdtzFBYA5wH8iBr4QP2cPYp8Mk1R2NVJCO6GaYVnqSXGUXzISaEKQdxROeWtiTpIvOTKgJQeKwjKWpQ+5ahZkxE2pCkMi516XtDCLR34rjNlY8kQpidiKyXcnS7BNaSQWxQ2DmTuNkSRJBqKBurDgdqA4yz+jLuud0LHoiFdR6VhT9XvtCPFXyO25CTQtKW0YzZB3miK2WHCTGqVSCUqB4PmuXMnhd0lHdvSM4laA0I24w3faqYHaV7nSJSlC0IpQA3WBkw1yBI90YQwkTalrQsFG2QZhQ04Lwy/QobQACiplvWlDbnZHiDFkLXSzjQJARssRJOQN8zm5kiVOCjKjgzLQnYBp0jRJXCDJiyuqVowuoZxdnwdWCjPA60e94xf6pGHKjIGO9zEMK+4drknsJavf7fb5zBfcVZETbrupcwcMIOiCPgkY8ChrxL89rtiXB517ZAAAAAElFTkSuQmCC" y="583.6094"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="33" x="678.5" y="648.2188">SPA</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="52" x="669" y="664.1914">[Angular ]</text></g><!--MD5=[d411ae741831d9949256f869b21b70b4]
+entity anonymous--><g id="elem_anonymous"><rect fill="#08427B" height="140.9531" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="207" x="231.5" y="256.6094"/><image height="48" width="48" x="311" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAACD0lEQVR4Xu2YoU4EMRCGT+4j8Ai8AhaH4QHgAUjQuFMECUgMIUgwJAgMhgQsAYUiJCiQIBBY+EITsjfTdme6V24v4c8vyGbb+ZjOtN0bNcvjQXmkH83WvYBWto6PLm6v7p7uH1/w2fXD+PBycX1Pv2l3IdDm/vn7x+dXQiAubRzoURa7gRZWd0iGRIiJbOnhnfYBQZNJjNbuyY2eJG8fkDE3bbG4ep6MHUAsgYxmE3nVs6VsBWJSGccsOlFPmLIViMzLOB7pCVO2AtHJMohH7Fh6zqitQK7m0rJvAVYgGcEpe//PLdDz65sM4pF9N7ICcXDKIB5Nv6j7tD0NoSdM2QrU9Gg0ewE1LqBhHR3BBdvj2vapnidjHxD/q6vd7Pvhr31AwcY8eXMTXAKECZZJFXuEq27aLgQK5uLMohCenGGuGewOxSjBvYBqeG6B+Nqiblggdjnc+ZXDy+FNFpFzw76O3UBAROuXh6FoiAcf5g9eTvUgzy0nWg6I8cXHRUpg5bOVBCo+KDpFajOf23GgPme7RSQ+lacIENUgJ6gg1k6HjgOlqnLqip4tEuhv0hNEMXUD0clyXE3p6pZA0S2nnvTlXwLJEZWlb7cTQH1+USgTN4VhAenm/wea1OCAOmqo6fE1WCb9WSKBah+rbUWPWAmE2Rvk0ApiB45eOyNAzU8xcTvj8KvkKEoOaIYeHNA3ZuygAvFMUO0AAAAASUVORK5CYII=" y="266.6094"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="142" x="264" y="331.2188">Anonymous Users</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="333" y="349.2676"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179" x="245.5" y="366.877">Anonymous Users - who can</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116" x="277" y="384.4863">search City details</text></g><!--MD5=[005c49534b9c93c0d97a1b6897faa56d]
+entity googleloggedIn--><g id="elem_googleloggedIn"><rect fill="#08427B" height="161.0781" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="202" x="474" y="246.6094"/><image height="48" width="48" x="551" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAACD0lEQVR4Xu2YoU4EMRCGT+4j8Ai8AhaH4QHgAUjQuFMECUgMIUgwJAgMhgQsAYUiJCiQIBBY+EITsjfTdme6V24v4c8vyGbb+ZjOtN0bNcvjQXmkH83WvYBWto6PLm6v7p7uH1/w2fXD+PBycX1Pv2l3IdDm/vn7x+dXQiAubRzoURa7gRZWd0iGRIiJbOnhnfYBQZNJjNbuyY2eJG8fkDE3bbG4ep6MHUAsgYxmE3nVs6VsBWJSGccsOlFPmLIViMzLOB7pCVO2AtHJMohH7Fh6zqitQK7m0rJvAVYgGcEpe//PLdDz65sM4pF9N7ICcXDKIB5Nv6j7tD0NoSdM2QrU9Gg0ewE1LqBhHR3BBdvj2vapnidjHxD/q6vd7Pvhr31AwcY8eXMTXAKECZZJFXuEq27aLgQK5uLMohCenGGuGewOxSjBvYBqeG6B+Nqiblggdjnc+ZXDy+FNFpFzw76O3UBAROuXh6FoiAcf5g9eTvUgzy0nWg6I8cXHRUpg5bOVBCo+KDpFajOf23GgPme7RSQ+lacIENUgJ6gg1k6HjgOlqnLqip4tEuhv0hNEMXUD0clyXE3p6pZA0S2nnvTlXwLJEZWlb7cTQH1+USgTN4VhAenm/wea1OCAOmqo6fE1WCb9WSKBah+rbUWPWAmE2Rvk0ApiB45eOyNAzU8xcTvj8KvkKEoOaIYeHNA3ZuygAvFMUO0AAAAASUVORK5CYII=" y="256.6094"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="177" x="484.5" y="321.2188">Logged In Users Social</text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="55" x="547.5" y="341.3438">Google</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="573" y="359.3926"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174" x="488" y="377.002">Google LoggedIn - who can</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116" x="517" y="394.6113">search City details</text></g><!--MD5=[6c2f1003fa9273ff92a7deb55eef25ed]
+entity userpassloggedIn--><g id="elem_userpassloggedIn"><rect fill="#08427B" height="161.0781" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="207" x="711.5" y="246.6094"/><image height="48" width="48" x="791" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAACD0lEQVR4Xu2YoU4EMRCGT+4j8Ai8AhaH4QHgAUjQuFMECUgMIUgwJAgMhgQsAYUiJCiQIBBY+EITsjfTdme6V24v4c8vyGbb+ZjOtN0bNcvjQXmkH83WvYBWto6PLm6v7p7uH1/w2fXD+PBycX1Pv2l3IdDm/vn7x+dXQiAubRzoURa7gRZWd0iGRIiJbOnhnfYBQZNJjNbuyY2eJG8fkDE3bbG4ep6MHUAsgYxmE3nVs6VsBWJSGccsOlFPmLIViMzLOB7pCVO2AtHJMohH7Fh6zqitQK7m0rJvAVYgGcEpe//PLdDz65sM4pF9N7ICcXDKIB5Nv6j7tD0NoSdM2QrU9Gg0ewE1LqBhHR3BBdvj2vapnidjHxD/q6vd7Pvhr31AwcY8eXMTXAKECZZJFXuEq27aLgQK5uLMohCenGGuGewOxSjBvYBqeG6B+Nqiblggdjnc+ZXDy+FNFpFzw76O3UBAROuXh6FoiAcf5g9eTvUgzy0nWg6I8cXHRUpg5bOVBCo+KDpFajOf23GgPme7RSQ+lacIENUgJ6gg1k6HjgOlqnLqip4tEuhv0hNEMXUD0clyXE3p6pZA0S2nnvTlXwLJEZWlb7cTQH1+USgTN4VhAenm/wea1OCAOmqo6fE1WCb9WSKBah+rbUWPWAmE2Rvk0ApiB45eOyNAzU8xcTvj8KvkKEoOaIYeHNA3ZuygAvFMUO0AAAAASUVORK5CYII=" y="256.6094"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="126" x="750" y="321.2188">Logged In Users</text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="160" x="735" y="341.3438">Username-Password</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="813" y="359.3926"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179" x="725.5" y="377.002">Anonymous Users - who can</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116" x="757" y="394.6113">search City details</text></g><!--MD5=[2e67ec536bab40147bd5a91c8a45064d]
+entity loggedInwithedit--><g id="elem_loggedInwithedit"><rect fill="#08427B" height="198.8125" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="203" x="953.5" y="227.6094"/><image height="48" width="48" x="1031" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAACD0lEQVR4Xu2YoU4EMRCGT+4j8Ai8AhaH4QHgAUjQuFMECUgMIUgwJAgMhgQsAYUiJCiQIBBY+EITsjfTdme6V24v4c8vyGbb+ZjOtN0bNcvjQXmkH83WvYBWto6PLm6v7p7uH1/w2fXD+PBycX1Pv2l3IdDm/vn7x+dXQiAubRzoURa7gRZWd0iGRIiJbOnhnfYBQZNJjNbuyY2eJG8fkDE3bbG4ep6MHUAsgYxmE3nVs6VsBWJSGccsOlFPmLIViMzLOB7pCVO2AtHJMohH7Fh6zqitQK7m0rJvAVYgGcEpe//PLdDz65sM4pF9N7ICcXDKIB5Nv6j7tD0NoSdM2QrU9Gg0ewE1LqBhHR3BBdvj2vapnidjHxD/q6vd7Pvhr31AwcY8eXMTXAKECZZJFXuEq27aLgQK5uLMohCenGGuGewOxSjBvYBqeG6B+Nqiblggdjnc+ZXDy+FNFpFzw76O3UBAROuXh6FoiAcf5g9eTvUgzy0nWg6I8cXHRUpg5bOVBCo+KDpFajOf23GgPme7RSQ+lacIENUgJ6gg1k6HjgOlqnLqip4tEuhv0hNEMXUD0clyXE3p6pZA0S2nnvTlXwLJEZWlb7cTQH1+USgTN4VhAenm/wea1OCAOmqo6fE1WCb9WSKBah+rbUWPWAmE2Rvk0ApiB45eOyNAzU8xcTvj8KvkKEoOaIYeHNA3ZuygAvFMUO0AAAAASUVORK5CYII=" y="237.6094"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="126" x="990" y="302.2188">Logged In Users</text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="147" x="979.5" y="322.3438">ROW_LEVEL_EDIT</text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="103" x="1003.5" y="342.4688">Authorization</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="1053" y="360.5176"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175" x="967.5" y="378.127">Users with Logged In Users,</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124" x="991" y="395.7363">ROW_LEVEL_EDIT</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="75" x="1017.5" y="413.3457">permissions</text></g><!--MD5=[b71df066693ffc88a3659cc1207fb2be]
+entity oautho--><g id="elem_oautho"><rect fill="#999999" height="75.3438" rx="2.5" ry="2.5" style="stroke:#8A8A8A;stroke-width:0.5;" width="110" x="689" y="45.6094"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="45" x="721.5" y="72.2188">0Auth</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="742" y="90.2676"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="703" y="107.877">Auth Provider</text></g><!--MD5=[1f6839cfcfbfbe5435615e4b284f6707]
+link anonymous to city_search_system_ui--><g id="link_anonymous_city_search_system_ui"><path d="M369.17,397.8294 C389.02,432.9394 416.7,474.1794 450,503.6094 C510.3,556.9094 598.38,592.5194 650.87,610.4494 " fill="none" id="anonymous-to-city_search_system_ui" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="658.66,613.0694,652.0283,607.6823,650.1213,613.3711,658.66,613.0694" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="106" x="464" y="477.5664">Anonymous Acces</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="132" x="451" y="492.6602">[via Anonymous access]</text></g><!--MD5=[ad64aa7feb033ba26de89def32b0bb77]
+link city_search_system_ui to city_search_system_api--><g id="link_city_search_system_ui_city_search_system_api"><path d="M658.66,627.9294 C529.09,634.7694 95.28,660.9394 55,706.6094 C32.36,732.2694 32.36,757.9494 55,783.6094 C93.77,827.5594 497.06,853.4594 642.81,861.4394 " fill="none" id="city_search_system_ui-to-city_search_system_api" style="stroke:#0000FF;stroke-width:1.0;"/><polygon fill="#0000FF" points="651.21,861.8994,643.3823,858.475,643.0607,864.4663,651.21,861.8994" style="stroke:#0000FF;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="106" x="67.5" y="735.0664">Uses search cities</text><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="66" x="89" y="750.1602">anonymous</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="132" x="56" y="765.2539">[via Anonymous access]</text></g><!--MD5=[35c6ab249940580bdd04227b5387080d]
+reverse link city_search_system_ui to city_search_system_api--><g id="link_city_search_system_ui_city_search_system_api"><path d="M650.64,626.8294 C544.88,629.5694 282.74,642.7894 229,706.6094 C111.56,846.0794 514.12,862.4594 651.02,864.0594 " fill="none" id="city_search_system_ui-backto-city_search_system_api" style="stroke:#008000;stroke-width:1.0;"/><polygon fill="#008000" points="658.88,626.6294,650.8075,623.8302,650.9575,629.8284,658.88,626.6294" style="stroke:#008000;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="147" x="230" y="727.5664">UI serves with City search</text><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="40" x="285" y="742.6602">results</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="112" x="247.5" y="757.7539">[via Anonymous-API</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="54" x="278" y="772.8477">response]</text></g><!--MD5=[ad64aa7feb033ba26de89def32b0bb77]
+link city_search_system_ui to city_search_system_api--><g id="link_city_search_system_ui_city_search_system_api"><path d="M658.86,631.3394 C591.21,641.9394 449.71,668.2594 421,706.6094 C400.49,734.0094 400.49,756.2094 421,783.6094 C447.64,819.1994 571.42,844.4294 643.17,856.3494 " fill="none" id="city_search_system_ui-to-city_search_system_api-1" style="stroke:#0000FF;stroke-width:1.0;"/><polygon fill="#0000FF" points="651.22,857.6694,643.807,853.4211,642.8415,859.3429,651.22,857.6694" style="stroke:#0000FF;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="130" x="422" y="735.0664">Uses search cities/can</text><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="116" x="430.5" y="750.1602">goto edit City screen</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="127" x="425" y="765.2539">[via 0Auth JWT Google]</text></g><!--MD5=[35c6ab249940580bdd04227b5387080d]
+reverse link city_search_system_ui to city_search_system_api--><g id="link_city_search_system_ui_city_search_system_api"><path d="M651.66,649.0694 C630.71,662.7194 607.63,682.1694 596,706.6094 C581.3,737.5094 581.3,752.7094 596,783.6094 C607.56,807.9094 630.45,827.2794 651.31,840.9194 " fill="none" id="city_search_system_ui-backto-city_search_system_api-1" style="stroke:#008000;stroke-width:1.0;"/><polygon fill="#008000" points="658.67,644.6594,650.3031,646.3902,653.5043,651.4649,658.67,644.6594" style="stroke:#008000;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="147" x="597" y="727.5664">UI serves with City search</text><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="40" x="652" y="742.6602">results</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="113" x="614" y="757.7539">[via JWT Google-API</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="54" x="645" y="772.8477">response]</text></g><!--MD5=[ad64aa7feb033ba26de89def32b0bb77]
+link city_search_system_ui to city_search_system_api--><g id="link_city_search_system_ui_city_search_system_api"><path d="M731.12,666.8894 C739.64,678.8894 747.53,692.5794 752,706.6094 C762.38,739.2194 762.38,750.9994 752,783.6094 C749.55,791.3194 746.06,798.9294 742,806.2094 " fill="none" id="city_search_system_ui-to-city_search_system_api-2" style="stroke:#0000FF;stroke-width:1.0;"/><polygon fill="#0000FF" points="737.77,813.3694,744.4241,808.01,739.2594,804.9562,737.77,813.3694" style="stroke:#0000FF;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="130" x="765" y="727.5664">Uses search cities/can</text><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="116" x="773.5" y="742.6602">goto edit City screen</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="140" x="760" y="757.7539">[via 0Auth JWT User/Pass</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="63" x="800" y="772.8477">from 0Auth]</text></g><!--MD5=[35c6ab249940580bdd04227b5387080d]
+reverse link city_search_system_ui to city_search_system_api--><g id="link_city_search_system_ui_city_search_system_api"><path d="M739.64,628.3594 C790.99,633.6194 873.2,650.8294 912,706.6094 C931.54,734.6994 931.54,755.5194 912,783.6094 C872.99,839.6894 790.1,856.7894 738.81,861.9494 " fill="none" id="city_search_system_ui-backto-city_search_system_api-2" style="stroke:#008000;stroke-width:1.0;"/><polygon fill="#008000" points="731.36,627.5894,739.0471,631.3187,739.6039,625.3446,731.36,627.5894" style="stroke:#008000;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="147" x="927" y="720.0664">UI serves with City search</text><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="40" x="982" y="735.1602">results</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="84" x="958.5" y="750.2539">[via  0Auth JWT</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="80" x="962" y="765.3477">User/Pass-API</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="54" x="975" y="780.4414">response]</text></g><!--MD5=[ad64aa7feb033ba26de89def32b0bb77]
+link city_search_system_ui to city_search_system_api--><g id="link_city_search_system_ui_city_search_system_api"><path d="M731.32,627.9394 C819.57,633.2294 1041.34,651.8094 1086,706.6094 C1180.78,822.8994 873.04,853.9394 746.66,861.6894 " fill="none" id="city_search_system_ui-to-city_search_system_api-3" style="stroke:#0000FF;stroke-width:1.0;"/><polygon fill="#0000FF" points="738.6,862.1694,746.7629,864.6927,746.4093,858.7031,738.6,862.1694" style="stroke:#0000FF;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="130" x="1111" y="727.5664">Uses search cities/can</text><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="116" x="1119.5" y="742.6602">goto edit City screen</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="54" x="1149" y="757.7539">[via 0Auth</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="147" x="1104" y="772.8477">token-ROW_LEVEL_EDIT]</text></g><!--MD5=[ad64aa7feb033ba26de89def32b0bb77]
+link city_search_system_ui to city_search_system_api--><g id="link_city_search_system_ui_city_search_system_api"><path d="M731.21,625.4194 C844.82,624.0994 1190.77,626.8094 1260,706.6094 C1282.43,732.4594 1282.43,757.7594 1260,783.6094 C1193.68,860.0394 873.48,865.7494 746.77,864.9394 " fill="none" id="city_search_system_ui-to-city_search_system_api-4" style="stroke:#008000;stroke-width:1.0;"/><polygon fill="#008000" points="738.71,864.8794,746.6884,867.9364,746.7312,861.9366,738.71,864.8794" style="stroke:#008000;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="130" x="1294.5" y="720.0664">Uses search cities/can</text><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="106" x="1308" y="735.1602">update City screen</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="46" x="1336.5" y="750.2539">[via JWT</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="168" x="1277" y="765.3477">token-ROW_LEVEL_EDIT-API</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="54" x="1334" y="780.4414">response]</text></g><!--MD5=[e1d30c49e0b34f80ca4c1744d4e248c4]
+link oautho to googleloggedIn--><g id="link_oautho_googleloggedIn"><path d="M688.72,95.3194 C657.13,104.6794 619.61,121.3894 598,150.6094 C579.55,175.5594 572.07,208.1294 569.79,238.4294 " fill="none" id="oautho-to-googleloggedIn" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="569.3,246.4894,572.7941,238.6925,566.8058,238.3175,569.3,246.4894" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="72" x="626.5" y="171.5664">JWT Access</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="127" x="599" y="186.6602">[via 0Auth JWT Google]</text></g><!--MD5=[44558d92feed6473b9db2d79675cdfe2]
+link googleloggedIn to city_search_system_ui--><g id="link_googleloggedIn_city_search_system_ui"><path d="M582.49,408.0394 C587.3,438.7994 595.16,473.6994 608,503.6094 C619.3,529.9294 637.16,556.0794 653.77,577.2694 " fill="none" id="googleloggedIn-to-city_search_system_ui" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="658.87,583.6694,656.2309,575.5432,651.5384,579.2822,658.87,583.6694" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="109" x="618" y="477.5664">0Auth issues token</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="127" x="609" y="492.6602">[via 0Auth JWT Google]</text></g><!--MD5=[ba41219f13de8f251e1330cd53f9c05b]
+link oautho to userpassloggedIn--><g id="link_oautho_userpassloggedIn"><path d="M737.81,120.7594 C735.28,143.3094 734.31,172.5694 741,197.6094 C744.73,211.5594 750.38,225.5794 756.93,238.9494 " fill="none" id="oautho-to-userpassloggedIn" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="760.65,246.3094,759.7149,237.8167,754.3612,240.5256,760.65,246.3094" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="72" x="777.5" y="164.0664">JWT Access</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="140" x="742" y="179.1602">[via 0Auth JWT User/Pass</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="63" x="782" y="194.2539">from 0Auth]</text></g><!--MD5=[ba41219f13de8f251e1330cd53f9c05b]
+link oautho to userpassloggedIn--><g id="link_oautho_userpassloggedIn"><path d="M799.21,93.9394 C831.62,102.8494 870.03,119.5694 890,150.6094 C907.52,177.8394 900.74,209.8494 885.65,239.0294 " fill="none" id="oautho-to-userpassloggedIn-1" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="881.65,246.3794,888.1113,240.7891,882.8423,237.919,881.65,246.3794" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="72" x="938.5" y="164.0664">JWT Access</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="54" x="946" y="179.1602">[via 0Auth</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="147" x="901" y="194.2539">token-ROW_LEVEL_EDIT]</text></g><!--MD5=[c00b385d1a116073e6769b8bfbb536bb]
+link userpassloggedIn to city_search_system_ui--><g id="link_userpassloggedIn_city_search_system_ui"><path d="M782.68,407.8194 C762.47,457.6794 736.89,520.7694 718.59,565.9294 " fill="none" id="userpassloggedIn-to-city_search_system_ui" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="715.48,573.5794,721.272,567.2983,715.7138,565.0386,715.48,573.5794" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="109" x="780" y="470.0664">0Auth issues token</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="140" x="763" y="485.1602">[via 0Auth JWT User/Pass</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="63" x="803" y="500.2539">from 0Auth]</text></g><!--MD5=[05012a38ba411c50140fe8f262f42a76]
+link loggedInwithedit to city_search_system_ui--><g id="link_loggedInwithedit_city_search_system_ui"><path d="M987.53,426.6694 C966.28,453.5794 941.4,481.4094 915,503.6094 C860.38,549.5494 785.54,586.0494 738.75,606.3694 " fill="none" id="loggedInwithedit-to-city_search_system_ui" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="731.2,609.6194,739.7341,609.2075,737.3589,603.6976,731.2,609.6194" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="109" x="978" y="470.0664">0Auth issues token</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="54" x="1004" y="485.1602">[via 0Auth</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="147" x="959" y="500.2539">token-ROW_LEVEL_EDIT]</text></g><rect height="139.2656" rx="7.5" ry="7.5" style="stroke:#00000000;stroke-width:1.0;fill:none;" width="133" x="1394" y="945.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="53" x="1400" y="968.1426">Legend</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="1453" y="968.1426"> </text><rect fill="#08427B" height="17.6094" style="stroke:none;stroke-width:1.0;" width="121" x="1400" y="971.2188"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44" x="1404" y="985.752">person</text><rect fill="#1168BD" height="17.6094" style="stroke:none;stroke-width:1.0;" width="121" x="1400" y="988.8281"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44" x="1404" y="1003.3613">system</text><rect fill="#438DD5" height="17.6094" style="stroke:none;stroke-width:1.0;" width="121" x="1400" y="1006.4375"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="1404" y="1020.9707">container</text><rect fill="#686868" height="17.6094" style="stroke:none;stroke-width:1.0;" width="121" x="1400" y="1024.0469"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="1404" y="1038.5801">external person</text><rect fill="#999999" height="17.6094" style="stroke:none;stroke-width:1.0;" width="121" x="1400" y="1041.6563"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="1404" y="1056.1895">external system</text><rect fill="#B3B3B3" height="17.6094" style="stroke:none;stroke-width:1.0;" width="121" x="1400" y="1059.2656"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="1404" y="1073.7988">external container</text><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="1400" x2="1521" y1="953.6094" y2="953.6094"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="1400" x2="1521" y1="971.2188" y2="971.2188"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="1400" x2="1521" y1="988.8281" y2="988.8281"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="1400" x2="1521" y1="1006.4375" y2="1006.4375"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="1400" x2="1521" y1="1024.0469" y2="1024.0469"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="1400" x2="1521" y1="1041.6563" y2="1041.6563"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="1400" x2="1521" y1="1059.2656" y2="1059.2656"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="1400" x2="1521" y1="1076.875" y2="1076.875"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="1400" x2="1400" y1="953.6094" y2="1076.875"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="1521" x2="1521" y1="953.6094" y2="1076.875"/><!--MD5=[1ade51afd01b2ef03417c83717a1ab68]
+@startuml
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+
+
+!define SPRITESURL https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/v1.0/sprites
+
+!include DEVICONS/angular.puml
+!include DEVICONS/java.puml
+
+AddRelTag("request", $lineColor="blue")
+AddRelTag("response", $lineColor="green")
+
+
+' uncomment the following line and comment the first to use locally
+' !include C4_Context.puml
+
+LAYOUT_WITH_LEGEND()
+
+title System Context diagram for City Search Application
+
+Person(anonymous, "Anonymous Users", "Anonymous Users - who can search City details")
+Person(googleloggedIn, "Logged In Users Social Google", "Google LoggedIn - who can search City details")
+Person(userpassloggedIn, "Logged In Users Username-Password", "Anonymous Users - who can search City details")
+Person(loggedInwithedit, "Logged In Users ROW_LEVEL_EDIT Authorization", "Users with Logged In Users, ROW_LEVEL_EDIT permissions")
+
+System_Boundary(c1, "Kuehne+Nagel-City Search") {
+    Container(city_search_system_api, "API", "Springboot",  $sprite="java")
+    Container(city_search_system_ui, "SPA", "Angular ", $sprite="angular")
+}
+System_Ext(oautho, "0Auth", "Auth Provider")
+
+Rel(anonymous, city_search_system_ui,"Anonymous Acces","via Anonymous access" )
+Rel(city_search_system_ui, city_search_system_api, "Uses search cities anonymous", "via Anonymous access", $tags="request")
+Rel_Back(city_search_system_ui, city_search_system_api, "UI serves with City search results", "via Anonymous-API response", $tags="response")
+
+Rel(oautho,googleloggedIn, "JWT Access","via 0Auth JWT Google")
+Rel(googleloggedIn, city_search_system_ui, "0Auth issues token", "via 0Auth JWT Google")
+Rel(city_search_system_ui, city_search_system_api, "Uses search cities/can goto edit City screen", "via 0Auth JWT Google", $tags="request")
+Rel_Back(city_search_system_ui, city_search_system_api, "UI serves with City search results", "via JWT Google-API response",$tags="response")
+
+Rel(oautho,userpassloggedIn, "JWT Access","via 0Auth JWT User/Pass from 0Auth")
+Rel(userpassloggedIn, city_search_system_ui, "0Auth issues token", "via 0Auth JWT User/Pass from 0Auth")
+Rel(city_search_system_ui, city_search_system_api, "Uses search cities/can goto edit City screen", "via 0Auth JWT User/Pass from 0Auth",$tags="request")
+Rel_Back(city_search_system_ui, city_search_system_api, "UI serves with City search results", "via  0Auth JWT User/Pass-API response",$tags="response")
+
+Rel(oautho,userpassloggedIn, "JWT Access","via 0Auth token-ROW_LEVEL_EDIT")
+Rel(loggedInwithedit, city_search_system_ui, "0Auth issues token", "via 0Auth token-ROW_LEVEL_EDIT")
+Rel(city_search_system_ui, city_search_system_api, "Uses search cities/can goto edit City screen", "via 0Auth token-ROW_LEVEL_EDIT",$tags="request")
+Rel(city_search_system_ui, city_search_system_api, "Uses search cities/can update City screen", "via JWT token-ROW_LEVEL_EDIT-API response",$tags="response")
+
+
+
+@enduml
+
+@startuml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam defaultTextAlignment center
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+
+skinparam LegendBorderColor transparent
+skinparam LegendBackgroundColor transparent
+skinparam LegendFontColor #FFFFFF
+
+skinparam shadowing<<legendArea>> false
+skinparam rectangle<<legendArea>> {
+    backgroundcolor #00000000
+    bordercolor #00000000
+}
+
+skinparam rectangle {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam database {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam queue {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam arrow {
+    Color #666666
+    FontColor #666666
+    FontSize 12
+}
+
+skinparam actor {
+    StereotypeFontSize 12
+    shadowing false
+    style awesome
+}
+
+skinparam person {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam package {
+    StereotypeFontSize 6
+    StereotypeFontColor transparent
+    FontStyle plain
+    BackgroundColor transparent
+}
+
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 6
+    StereotypeFontColor transparent
+    FontColor #444444
+    BorderColor #444444
+    BackgroundColor transparent
+    BorderStyle dashed
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam database<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam queue<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam actor<<person>> {
+    StereotypeFontColor #08427B
+    FontColor #08427B
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam person<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+
+
+skinparam rectangle<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam database<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam queue<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam actor<<external_person>> {
+    StereotypeFontColor #686868
+    FontColor #686868
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam person<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+
+
+skinparam rectangle<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam database<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam queue<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam actor<<system>> {
+    StereotypeFontColor #1168BD
+    FontColor #1168BD
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam person<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+
+
+skinparam rectangle<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam database<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam queue<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam actor<<external_system>> {
+    StereotypeFontColor #999999
+    FontColor #999999
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam person<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+
+
+
+
+
+sprite $person [48x48/16] {
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+0000000000000000000049BCCA7200000000000000000000
+0000000000000000006EFFFFFFFFB3000000000000000000
+00000000000000001CFFFFFFFFFFFF700000000000000000
+0000000000000001EFFFFFFFFFFFFFF80000000000000000
+000000000000000CFFFFFFFFFFFFFFFF6000000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+00000000000001FFFFFFFFFFFFFFFFFFF900000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFF00000000000000
+0000000000000BFFFFFFFFFFFFFFFFFFFF40000000000000
+0000000000000EFFFFFFFFFFFFFFFFFFFF70000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000DFFFFFFFFFFFFFFFFFFFF60000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFF40000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFE00000000000000
+00000000000000EFFFFFFFFFFFFFFFFFF800000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+000000000000000BFFFFFFFFFFFFFFFF5000000000000000
+0000000000000001DFFFFFFFFFFFFFF70000000000000000
+00000000000000000BFFFFFFFFFFFF500000000000000000
+0000000000000000005DFFFFFFFFA1000000000000000000
+0000000000000000000037ABB96100000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000025788300000000005886410000000000000
+000000000007DFFFFFFD9643347BFFFFFFFB400000000000
+0000000004EFFFFFFFFFFFFFFFFFFFFFFFFFFB1000000000
+000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFD200000000
+00000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE10000000
+0000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB0000000
+000000BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5000000
+000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD000000
+000009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF200000
+00000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF600000
+00000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF800000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA00000
+00000EFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF700000
+000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE100000
+0000008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD3000000
+000000014555555555555555555555555555555300000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+}
+
+sprite $person2 [48x48/16] {
+0000000000000000000049BCCA7200000000000000000000
+0000000000000000006EFFFFFFFFB3000000000000000000
+00000000000000001CFFFFFFFFFFFF700000000000000000
+0000000000000001EFFFFFFFFFFFFFF80000000000000000
+000000000000000CFFFFFFFFFFFFFFFF6000000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+00000000000001FFFFFFFFFFFFFFFFFFF900000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFF00000000000000
+0000000000000BFFFFFFFFFFFFFFFFFFFF40000000000000
+0000000000000EFFFFFFFFFFFFFFFFFFFF70000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000DFFFFFFFFFFFFFFFFFFFF60000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFF40000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFE00000000000000
+00000000000000EFFFFFFFFFFFFFFFFFF800000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+000000000000000BFFFFFFFFFFFFFFFF5000000000000000
+0000000000000001DFFFFFFFFFFFFFF70000000000000000
+00000000000000000BFFFFFFFFFFFF500000000000000000
+0000000000000000005DFFFFFFFFA1000000000000000000
+0000000000000000000037ABB96100000000000000000000
+000000000002578888300000000005888864100000000000
+0000000007DFFFFFFFFD9643347BFFFFFFFFFB4000000000
+00000004EFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB10000000
+0000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD2000000
+000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE100000
+00003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+0000BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF50000
+0003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD0000
+0009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2000
+000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6000
+000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA000
+000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6000
+0009FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFF2000
+0003FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFD0000
+0000BFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFF50000
+00003FFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFB00000
+000006FFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFE100000
+0000007FFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFD2000000
+00000004EFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFB10000000
+0000000007DF8FFFFFFFFFFFFFFFFFFFFFF8FB4000000000
+000000000002578888888888888888888864100000000000
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam database<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam queue<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam actor<<container>> {
+    StereotypeFontColor #438DD5
+    FontColor #438DD5
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam person<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+
+
+skinparam rectangle<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam database<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam queue<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam actor<<external_container>> {
+    StereotypeFontColor #B3B3B3
+    FontColor #B3B3B3
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam person<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sprite $angular [48x48/16] {
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000016500000000000000000000000
+000000000000000000004AFFFFB500000000000000000000
+0000000000000000039FFFFFFFFFFB500000000000000000
+0000000000000039EFFFFFFEFFFFFFFE9400000000000000
+0000000000028DFFFFFFFFF7AFFFFFFFFFEA400000000000
+0000000016CFFFFFFFFFFFF12FFFFFFFFFFFFE9300000000
+0000000BFFFFFFFFFFFFFF800BFFFFFFFFFFFFFFD0000000
+0000000DFFFFFFFFFFFFFF2003FFFFFFFFFFFFFFD0000000
+0000000BFFFFFFFFFFFFFA0000CFFFFFFFFFFFFFB0000000
+00000009FFFFFFFFFFFFF300004FFFFFFFFFFFFF90000000
+00000007FFFFFFFFFFFFC000000DFFFFFFFFFFFF70000000
+00000005FFFFFFFFFFFF40043006FFFFFFFFFFFF50000000
+00000003FFFFFFFFFFFD000BA000EFFFFFFFFFFF30000000
+00000001FFFFFFFFFFF6002FF2007FFFFFFFFFFF10000000
+00000000FFFFFFFFFFE0008FF9000EFFFFFFFFFF00000000
+00000000EFFFFFFFFF8000EFFF2008FFFFFFFFFD00000000
+00000000CFFFFFFFFF1006FFFF9001FFFFFFFFFB00000000
+00000000AFFFFFFFF9000DFFFFF1009FFFFFFFF900000000
+000000008FFFFFFFF20005555552002FFFFFFFF800000000
+000000006FFFFFFFB00000000000000AFFFFFFF600000000
+000000004FFFFFFF4000000000000002FFFFFFF400000000
+000000002FFFFFFD0005888888888000BFFFFFF200000000
+000000000FFFFFF5000EFFFFFFFFF4004FFFFFF000000000
+000000000EFFFFE0006FFFFFFFFFFB000CFFFFE000000000
+000000000CFFFF7000CFFFFFFFFFFF2005FFFFC000000000
+000000000AFFFF1002FFFFFFFFFFFF9000DFFFA000000000
+0000000008FFFB444AFFFFFFFFFFFFF3338FFF8000000000
+0000000006FFFFFFFFFFFFFFFFFFFFFFFFFFFF6000000000
+0000000003EFFFFFFFFFFFFFFFFFFFFFFFFFFE2000000000
+000000000018FFFFFFFFFFFFFFFFFFFFFFFF800000000000
+00000000000019FFFFFFFFFFFFFFFFFFFF91000000000000
+000000000000003CFFFFFFFFFFFFFFFFB200000000000000
+00000000000000004DFFFFFFFFFFFFC30000000000000000
+0000000000000000005EFFFFFFFFE5000000000000000000
+000000000000000000007FFFFFE700000000000000000000
+00000000000000000000019FF91000000000000000000000
+000000000000000000000002200000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+}
+
+
+skinparam folderBackgroundColor<<DEV ANGULAR>> White
+sprite $java [48x48/16] {
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000120000000000000000000
+000000000000000000000000000080000000000000000000
+0000000000000000000000000001B0000000000000000000
+0000000000000000000000000005A0000000000000000000
+000000000000000000000000000C70000000000000000000
+000000000000000000000000006F10000000000000000000
+00000000000000000000000005F700000000000000000000
+0000000000000000000000006FB000000000000000000000
+000000000000000000000009FB0001650000000000000000
+0000000000000000000001CFA0018C200000000000000000
+000000000000000000002DF9005E90000000000000000000
+00000000000000000001DF8008F700000000000000000000
+0000000000000000000BFB005FA000000000000000000000
+0000000000000000001FF200CF3000000000000000000000
+0000000000000000001FD000FF4000000000000000000000
+0000000000000000000DE000EFB000000000000000000000
+00000000000000000005F2008FF600000000000000000000
+00000000000000000000AA001EFE00000000000000000000
+000000000000000000000B4004FF40000000000000000000
+0000000000000000000000A100BF20000000000000000000
+00000000000000000000000400A900000011000000000000
+00000000000000016730000001800000046CB10000000000
+00000000000005BD30000000010000120000DC0000000000
+0000000000001DFEA7765567889BCB7000008F1000000000
+000000000000001468899988753200000000BE0000000000
+000000000000000001000000000000000004F50000000000
+0000000000000000C800000000024200004E500000000000
+0000000000000000CFFDCBBBCEFFFC201881000000000000
+00000000000000000268AAAAA86400003000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000009A10000002410000000000000000000
+00000000000000000CFFFEDDEFFFF6000000000000000000
+00000000000003520049CEEFFCA720000000000000000000
+000000000019B50000000000000000000002400000000000
+0000000002FF820000000000000000000378000000000000
+00000000018DFFDB9766555566789ACCA610160000000000
+00000000000001357899AABAA9875310026AA10000000000
+0000000000000003542211111233579BCB72000000000000
+000000000000000002457778888765310000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+}
+
+
+skinparam folderBackgroundColor<<DEV JAVA>> White
+
+skinparam arrow<<request>> {
+    Color blue
+}
+
+skinparam arrow<<response>> {
+    Color green
+}
+
+
+
+
+hide stereotype
+legend right
+|<color:#000000>**Legend**</color> |
+|<#08427B> person |
+|<#1168BD> system |
+|<#438DD5> container |
+|<#686868> external person |
+|<#999999> external system |
+|<#B3B3B3> external container |
+endlegend
+
+title System Context diagram for City Search Application
+
+rectangle "<$person>\n==Anonymous Users\n\n Anonymous Users - who can search City details" <<person>> as anonymous 
+rectangle "<$person>\n==Logged In Users Social Google\n\n Google LoggedIn - who can search City details" <<person>> as googleloggedIn 
+rectangle "<$person>\n==Logged In Users Username-Password\n\n Anonymous Users - who can search City details" <<person>> as userpassloggedIn 
+rectangle "<$person>\n==Logged In Users ROW_LEVEL_EDIT Authorization\n\n Users with Logged In Users, ROW_LEVEL_EDIT permissions" <<person>> as loggedInwithedit 
+
+rectangle "==Kuehne+Nagel-City Search\n<size:12>[System]</size>" <<boundary>> as c1  {
+    rectangle "<$java>\n==API\n//<size:12>[Springboot]</size>//" <<container>> as city_search_system_api 
+    rectangle "<$angular>\n==SPA\n//<size:12>[Angular ]</size>//" <<container>> as city_search_system_ui 
+}
+rectangle "==0Auth\n\n Auth Provider" <<external_system>> as oautho 
+
+anonymous - ->> city_search_system_ui : **Anonymous Acces**\n//<size:12>[via Anonymous access]</size>//
+city_search_system_ui - ->> city_search_system_api <<request>> : **Uses search cities anonymous**\n//<size:12>[via Anonymous access]</size>//
+city_search_system_ui <<- - city_search_system_api <<response>> : **UI serves with City search results**\n//<size:12>[via Anonymous-API response]</size>//
+
+oautho - ->> googleloggedIn : **JWT Access**\n//<size:12>[via 0Auth JWT Google]</size>//
+googleloggedIn - ->> city_search_system_ui : **0Auth issues token**\n//<size:12>[via 0Auth JWT Google]</size>//
+city_search_system_ui - ->> city_search_system_api <<request>> : **Uses search cities/can goto edit City screen**\n//<size:12>[via 0Auth JWT Google]</size>//
+city_search_system_ui <<- - city_search_system_api <<response>> : **UI serves with City search results**\n//<size:12>[via JWT Google-API response]</size>//
+
+oautho - ->> userpassloggedIn : **JWT Access**\n//<size:12>[via 0Auth JWT User/Pass from 0Auth]</size>//
+userpassloggedIn - ->> city_search_system_ui : **0Auth issues token**\n//<size:12>[via 0Auth JWT User/Pass from 0Auth]</size>//
+city_search_system_ui - ->> city_search_system_api <<request>> : **Uses search cities/can goto edit City screen**\n//<size:12>[via 0Auth JWT User/Pass from 0Auth]</size>//
+city_search_system_ui <<- - city_search_system_api <<response>> : **UI serves with City search results**\n//<size:12>[via  0Auth JWT User/Pass-API</size>//\n//<size:12>response]</size>//
+
+oautho - ->> userpassloggedIn : **JWT Access**\n//<size:12>[via 0Auth token-ROW_LEVEL_EDIT]</size>//
+loggedInwithedit - ->> city_search_system_ui : **0Auth issues token**\n//<size:12>[via 0Auth token-ROW_LEVEL_EDIT]</size>//
+city_search_system_ui - ->> city_search_system_api <<request>> : **Uses search cities/can goto edit City screen**\n//<size:12>[via 0Auth token-ROW_LEVEL_EDIT]</size>//
+city_search_system_ui - ->> city_search_system_api <<response>> : **Uses search cities/can update City screen**\n//<size:12>[via JWT token-ROW_LEVEL_EDIT-API</size>//\n//<size:12>response]</size>//
+
+
+
+@enduml
+
+PlantUML version 1.2022.6(Tue Jun 21 23:04:49 IST 2022)
+(GPLV2 source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: IN
+--></g></svg>
