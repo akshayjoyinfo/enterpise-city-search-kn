@@ -16,7 +16,13 @@ City Updated API- works with Logged In Users with Role: ROW_LEVEL_EDIT
 API & UI Deployed to Heroku API(postgres+api) & UI(angular)
 
 API: https://city-search-api-springboot.herokuapp.com/swagger
+
 UI: https://city-search-ui-angular.herokuapp.com/
+
+![image](https://user-images.githubusercontent.com/1292985/184527339-ea7a7ff9-14ca-4897-92f1-ea4add461e6d.png)
+
+![image](https://user-images.githubusercontent.com/1292985/184527347-31b02275-c19b-462c-b902-733547cf42e0.png)
+
 
 
 ### 4. Build & Run in Local
