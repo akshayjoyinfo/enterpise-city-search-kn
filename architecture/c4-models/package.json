@@ -1,0 +1,12 @@
+{
+  "name": "c4-models",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "java -jar .\\plantuml.jar -o .\\out\\ .\\*.puml & java -jar .\\plantuml.jar -tsvg  -o .\\out\\ .\\*.puml"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,57 @@
+@startuml
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+
+
+!define SPRITESURL https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/v1.0/sprites
+
+!include DEVICONS/angular.puml
+!include DEVICONS/java.puml
+
+AddRelTag("request", $lineColor="blue")
+AddRelTag("response", $lineColor="green")
+
+
+' uncomment the following line and comment the first to use locally
+' !include C4_Context.puml
+
+LAYOUT_WITH_LEGEND()
+
+title System Context diagram for City Search Application
+
+Person(anonymous, "Anonymous Users", "Anonymous Users - who can search City details")
+Person(googleloggedIn, "Logged In Users Social Google", "Google LoggedIn - who can search City details")
+Person(userpassloggedIn, "Logged In Users Username-Password", "Anonymous Users - who can search City details")
+Person(loggedInwithedit, "Logged In Users ROW_LEVEL_EDIT Authorization", "Users with Logged In Users, ROW_LEVEL_EDIT permissions")
+
+System_Boundary(c1, "Kuehne+Nagel-City Search") {
+    Container(city_search_system_api, "API", "Springboot",  $sprite="java")
+    Container(city_search_system_ui, "SPA", "Angular ", $sprite="angular")
+}
+System_Ext(oautho, "0Auth", "Auth Provider")
+
+Rel(anonymous, city_search_system_ui,"Anonymous Acces","via Anonymous access" )
+Rel(city_search_system_ui, city_search_system_api, "Uses search cities anonymous", "via Anonymous access", $tags="request")
+Rel_Back(city_search_system_ui, city_search_system_api, "UI serves with City search results", "via Anonymous-API response", $tags="response")
+
+Rel(oautho,googleloggedIn, "JWT Access","via 0Auth JWT Google")
+Rel(googleloggedIn, city_search_system_ui, "0Auth issues token", "via 0Auth JWT Google")
+Rel(city_search_system_ui, city_search_system_api, "Uses search cities/can goto edit City screen", "via 0Auth JWT Google", $tags="request")
+Rel_Back(city_search_system_ui, city_search_system_api, "UI serves with City search results", "via JWT Google-API response",$tags="response")
+
+Rel(oautho,userpassloggedIn, "JWT Access","via 0Auth JWT User/Pass from 0Auth")
+Rel(userpassloggedIn, city_search_system_ui, "0Auth issues token", "via 0Auth JWT User/Pass from 0Auth")
+Rel(city_search_system_ui, city_search_system_api, "Uses search cities/can goto edit City screen", "via 0Auth JWT User/Pass from 0Auth",$tags="request")
+Rel_Back(city_search_system_ui, city_search_system_api, "UI serves with City search results", "via  0Auth JWT User/Pass-API response",$tags="response")
+
+Rel(oautho,userpassloggedIn, "JWT Access","via 0Auth token-ROW_LEVEL_EDIT")
+Rel(loggedInwithedit, city_search_system_ui, "0Auth issues token", "via 0Auth token-ROW_LEVEL_EDIT")
+Rel(city_search_system_ui, city_search_system_api, "Uses search cities/can goto edit City screen", "via 0Auth token-ROW_LEVEL_EDIT",$tags="request")
+Rel(city_search_system_ui, city_search_system_api, "Uses search cities/can update City screen", "via JWT token-ROW_LEVEL_EDIT-API response",$tags="response")
+
+
+
+@enduml
