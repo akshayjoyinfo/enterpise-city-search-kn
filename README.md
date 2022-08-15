@@ -15,8 +15,20 @@ City Updated API- works with Logged In Users with Role: ROW_LEVEL_EDIT
 ### 3. Live Demo
 API & UI Deployed to Heroku API(postgres+api) & UI(angular)
 
+
+There are multiple types of users who can access the application
+1. Anonymous Users/ Public Users - users can search citites with image , but no EDIT button, Dialog will not be available
+2. Logged  In Users - Google / UserName/Password - User can login and search cities with image, Edit button will be enabled, but user can not modify cities details
+3. Logged In Users with ROW_LEVEL_EDIT role - user can search / modify cities
+
 API: https://city-search-api-springboot.herokuapp.com/swagger
+
 UI: https://city-search-ui-angular.herokuapp.com/
+
+![image](https://user-images.githubusercontent.com/1292985/184527339-ea7a7ff9-14ca-4897-92f1-ea4add461e6d.png)
+
+![image](https://user-images.githubusercontent.com/1292985/184527347-31b02275-c19b-462c-b902-733547cf42e0.png)
+
 
 
 ### 4. Build & Run in Local
@@ -34,6 +46,12 @@ UI: https://city-search-ui-angular.herokuapp.com/
 2. Postgres 
 please check the connection string in application.properties
 make sure update  **DATABASE_URL** and database should be created in Local PG Server
+
+  >spring.datasource.url=jdbc:postgresql://localhost:5432/kryptontest?reWriteBatchedInserts=true
+  
+  >spring.datasource.username= <usrname>
+  
+  >spring.datasource.password=<Pasword>
 
 >jdbc:postgresql://localhost:5432/krypton?reWriteBatchedInserts=true```
 
@@ -59,6 +77,12 @@ curl -X 'GET' \
 
 for Testing 
 update the application.properties in test pacakge
+
+  >spring.datasource.url=jdbc:postgresql://localhost:5432/kryptontest?reWriteBatchedInserts=true
+  
+  >spring.datasource.username= <usrname>
+  >spring.datasource.password=<Pasword>
+
 
 >jdbc:postgresql://localhost:5432/kryptontest?reWriteBatchedInserts=true```
 
