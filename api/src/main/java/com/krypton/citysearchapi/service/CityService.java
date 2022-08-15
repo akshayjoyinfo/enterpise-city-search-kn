@@ -17,8 +17,13 @@ import java.util.Optional;
 @Service
 public class CityService implements ICityService {
 
-    @Autowired
+
     private CityRepository cityRepository;
+
+    public CityService(CityRepository _cityRepository) {
+        this.cityRepository = _cityRepository;
+    }
+
 
 
     @Override

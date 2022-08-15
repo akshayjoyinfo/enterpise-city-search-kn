@@ -23,5 +23,5 @@ import { EditCityDialogComponent } from './components/edit-city-dialog/edit-city
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-
+  title: string = Constants.TitleOfSite;
 }

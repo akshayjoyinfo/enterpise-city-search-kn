@@ -22,22 +22,15 @@ export class CityApiService {
   };
   
 
-  public getCities(query:string="",page: number=1, size:number=10) {
-    console.log('Called CityAPI Service');
-    
+  public getCities(query:string="",page: number=1, size:number=10) {    
     let CITIES_URL =`/cities?query=${query}&page=${page}&size=${size}`;
     return this.http
     .get<ApiPaginatedModel<City[]>>(this.API_HOST+CITIES_URL)
     .pipe(retry(2), catchError(this.handleError));
   }
 
-  public getCity(url: string, options?: any) {
-    return this.http.get(url, options);
-  }
-
   public updateCity(data: City) {
     let CITIES_URL =`/cities/${data._id}`;
-    console.log(this.API_HOST+CITIES_URL);
     return this.http.put(this.API_HOST+CITIES_URL, data)
     .pipe(retry(2), catchError(this.handleError));
   }

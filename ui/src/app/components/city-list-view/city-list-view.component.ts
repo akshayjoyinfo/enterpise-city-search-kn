@@ -54,7 +54,6 @@ export class CityListViewComponent {
     public dialog: MatDialog,
     private _snackBar: MatSnackBar
   ) {
-    console.log(Constants.API_HOST);
   }
 
   ngAfterViewInit() {
@@ -104,7 +103,6 @@ export class CityListViewComponent {
   }
 
   openEditDialog(elem:any) {
-    console.log(elem);
     const myCompDialog = this.dialog.open(EditCityDialogComponent, {
       data: elem,
       panelClass: 'fullscreen-dialog',
@@ -113,7 +111,6 @@ export class CityListViewComponent {
     });
     myCompDialog.afterClosed().subscribe((res) => {
       // Data back from dialog
-      console.log(res);
       if(res.status ==='200 OK')
         this._snackBar.open('Updated City', 'SAVED',{
           duration: 3000,

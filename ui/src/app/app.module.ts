@@ -76,6 +76,5 @@ import { environment as env } from '../environments/environment';
 })
 export class AppModule { 
   ngOnInit() {
-    console.log(env);
   }
 }

@@ -79,3 +79,8 @@ out/
 
 ### VS Code ###
 .vscode/
+
+
+
+api/coverage/**
+ui/coverage/**
