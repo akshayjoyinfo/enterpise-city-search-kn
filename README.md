@@ -116,6 +116,13 @@ npm run start-local
 
 ```
 
+#### 4.2 Coverage Report
+UI-Angular - not final
+![image](https://user-images.githubusercontent.com/1292985/184620441-4fb8a207-83c4-4219-adfb-035600e623ca.png)
+
+
+API-SpringBoot - not final
+![image](https://user-images.githubusercontent.com/1292985/184620534-79ae1c5f-5009-40bd-8690-3d2bca01dd14.png)
 
 
 ### 5. Improvements
